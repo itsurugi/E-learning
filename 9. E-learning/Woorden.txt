@@ -1,0 +1,3 @@
+Vak 		=	Subject
+Lesonderwerp 	=	LessonTopic
+Les		= 	Lesson

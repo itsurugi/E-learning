@@ -1,0 +1,78 @@
+﻿<Page
+    x:Class="E_learning.SubjectsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:E_learning"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <!-- Titel links -->
+        <Grid Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+            <TextBlock></TextBlock>
+        </Grid>
+
+        <!-- Titel rechts -->
+        <Grid Grid.Column="1" Grid.Row="0">
+            <TextBlock TextAlignment="Center" FontSize="20" Padding="0,10,0,0">Planning</TextBlock>
+        </Grid>
+
+        <!-- Titel links -->
+        <Grid Grid.Column="0" Grid.Row="0">
+            <TextBlock TextAlignment="Center" FontSize="20" Padding="0,10,0,10">Vakken</TextBlock>
+        </Grid>
+
+        <!-- Linker deel -->
+        <Grid Grid.Column="0" Grid.Row="1" Loaded="Grid_Loaded">
+            <ListBox Name="lbSubjects" />
+        </Grid>
+
+        <!-- Rechter deel -->
+        <Grid Grid.Column="1" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Te doen -->
+            <Grid Grid.Row="0" Padding="10,10,10,10" Background="#FFF2F2F2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" FontSize="16" Margin="0,0,0,10" FontWeight="Bold">Te doen</TextBlock>
+
+                <ListView Background="White"  Name="lvTodo" Grid.Row="1">
+                </ListView>
+                
+            </Grid>
+
+            <!-- Gedaan -->
+            <Grid Grid.Row="1" Padding="10,0,10,10" Background="#FFF2F2F2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0" FontSize="16" Margin="0,0,0,10" FontWeight="Bold" >Afgemaakt</TextBlock>
+
+                <ListView Background="White" Name="lvDone" Grid.Row="1" >
+                    
+                </ListView>
+                
+            </Grid>
+
+        </Grid>
+    </Grid>
+</Page>

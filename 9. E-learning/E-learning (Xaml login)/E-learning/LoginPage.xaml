@@ -1,0 +1,69 @@
+﻿<Page
+    x:Class="E_learning.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:E_learning"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+
+                <VisualState x:Name="Wide">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="500" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="logingrid.Width" Value="500"></Setter>
+                        <Setter Target="logingrid.HorizontalAlignment" Value="center"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="Narrow">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="logingrid.Width" Value="auto"></Setter>
+                        <Setter Target="logingrid.HorizontalAlignment" Value="stretch"></Setter>
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+
+        <Grid x:Name="logingrid"  Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="500" Padding="10,0,10,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="30" TextAlignment="Center" FontWeight="bold">E-learning</TextBlock>
+            <TextBlock Grid.Row="1" Margin="5">Gebruikersnaam</TextBlock>
+            <TextBlock Grid.Row="2" Margin="5">Wachtwoord</TextBlock>
+            <TextBlock Grid.Row="3" Margin="5">Inloggen als</TextBlock>
+
+            <TextBox Name="name" Grid.Column="1" Grid.Row="1" Margin="5"/>
+            <PasswordBox Name="password" Grid.Column="1" Grid.Row="2" Margin="5"/>
+            <ComboBox Name="role" Grid.Column="1" Grid.Row="3" Margin="5">
+                <ComboBoxItem>Leerling</ComboBoxItem>
+                <ComboBoxItem>Consulent</ComboBoxItem>
+                <ComboBoxItem>Administratie</ComboBoxItem>
+            </ComboBox>
+            <Button Name="loginbutton" Grid.Column="1" Grid.Row="4" Margin="5" Click="loginbutton_Click">Inloggen</Button>
+
+        </Grid>
+    </Grid>
+</Page>
